@@ -1,0 +1,789 @@
+/* ===================================================================
+   MINIMAL & LIGHTWEIGHT TYPOGRAPHIC CSS TEMPLATE
+   Project: Windows Registry Change Monitoring System
+   Author: Kushagra Dixit
+   Theme: Minimalist Clean, Light Gray, Soft Charcoal, Dark Blue Highlights
+   =================================================================== */
+
+/* -------------------------------------------------------------------
+   1. VARIABLES & BASE PREFERENCES
+   ------------------------------------------------------------------- */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-terminal: #1e293b;
+  
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  
+  --accent: #1e40af;
+  --accent-light: #eff6ff;
+  --accent-hover: #1d4ed8;
+  
+  --color-high: #b91c1c;
+  --color-low: #0369a1;
+  --color-pass: #15803d;
+  --color-warn: #b45309;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, Menlo, Monaco, monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------------------------------------------------
+   2. TYPOGRAPHY & LAYOUT UTILITIES
+   ------------------------------------------------------------------- */
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-light {
+  background-color: var(--bg-secondary);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+
+.section-lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background-color: var(--bg-secondary);
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  color: var(--accent);
+}
+
+/* -------------------------------------------------------------------
+   3. STICKY NAVIGATION BAR
+   ------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border-light);
+  padding: 15px 0;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 1.1rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* -------------------------------------------------------------------
+   4. CLEAN HERO SECTION
+   ------------------------------------------------------------------- */
+.hero-section {
+  padding: 70px 0 50px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  background-color: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid rgba(30, 64, 175, 0.15);
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.hero-meta-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* -------------------------------------------------------------------
+   5. BUTTONS
+   ------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-light);
+}
+
+/* -------------------------------------------------------------------
+   6. OVERVIEW SECTION
+   ------------------------------------------------------------------- */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.overview-block h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.clean-list {
+  list-style: none;
+}
+
+.clean-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.clean-list li::before {
+  content: "\2022";
+  color: var(--accent);
+  font-weight: bold;
+  position: absolute;
+  left: 4px;
+}
+
+.warning-box {
+  background-color: #fffbeb;
+  border: 1px solid #fef3c7;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  gap: 12px;
+}
+
+.warning-icon {
+  font-size: 1.3rem;
+  color: var(--color-warn);
+}
+
+.warning-content strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--color-warn);
+  margin-bottom: 4px;
+}
+
+.warning-content p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------------
+   7. KEY FEATURES
+   ------------------------------------------------------------------- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.feature-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------------------------
+   8. MONITORED LOCATIONS
+   ------------------------------------------------------------------- */
+.code-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.code-item {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  padding: 14px;
+  border-radius: 4px;
+}
+
+.code-item code {
+  border: none;
+  background-color: transparent;
+  font-size: 0.82rem;
+  display: block;
+  word-break: break-all;
+}
+
+.sub-locations h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.bullet-list-horizontal {
+  list-style: none;
+  display: flex;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.bullet-list-horizontal li::before {
+  content: "\2022";
+  color: var(--text-dim);
+  margin-right: 6px;
+}
+
+/* -------------------------------------------------------------------
+   9. SYSTEM WORKFLOW
+   ------------------------------------------------------------------- */
+.workflow-chain {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.flow-step {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-num {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--accent);
+  background-color: var(--accent-light);
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.flow-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.highlight-step {
+  border-color: var(--accent);
+  background-color: var(--accent-light);
+}
+
+.highlight-step .flow-num {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.flow-arrow {
+  color: var(--text-dim);
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------------
+   10. TERMINAL SHOWCASE
+   ------------------------------------------------------------------- */
+.terminal-container {
+  background-color: var(--bg-terminal);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.terminal-header {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  border-bottom: 1px solid #334155;
+}
+
+.terminal-body {
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #f1f5f9;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.terminal-body strong {
+  color: #38bdf8;
+}
+
+.demo-output {
+  border: 1px solid var(--border-medium);
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.output-header {
+  background-color: #e2e8f0;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.output-body {
+  padding: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #ef4444;
+  white-space: pre-wrap;
+}
+
+.demo-notice {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* -------------------------------------------------------------------
+   11. DETECTION LOGIC & SEVERITY
+   ------------------------------------------------------------------- */
+.logic-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.logic-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.bullet-list {
+  padding-left: 20px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.bullet-list li {
+  margin-bottom: 6px;
+}
+
+.severity-scale {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.severity-scale h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.severity-scale p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.severity-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.sev-card {
+  border: 1px solid var(--border-light);
+  padding: 16px;
+  border-radius: 6px;
+  background-color: var(--bg-secondary);
+}
+
+.border-high {
+  border-left: 4px solid var(--color-high);
+}
+
+.border-low {
+  border-left: 4px solid var(--color-low);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.badge-high {
+  background-color: #fef2f2;
+  color: var(--color-high);
+}
+
+.badge-low {
+  background-color: #f0f9ff;
+  color: var(--color-low);
+}
+
+.sev-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.antivirus-warning {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* -------------------------------------------------------------------
+   12. REPORTING / TABLES
+   ------------------------------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background-color: var(--bg-card);
+  margin-top: 14px;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+.simple-table th {
+  background-color: var(--bg-secondary);
+  color: var(--text-main);
+  font-weight: 700;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.simple-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-muted);
+  vertical-align: middle;
+}
+
+.simple-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tag-add, .tag-mod, .tag-del {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tag-add { background-color: #ecfdf5; color: var(--color-pass); }
+.tag-mod { background-color: #f0f9ff; color: var(--color-low); }
+.tag-del { background-color: #fef2f2; color: var(--color-high); }
+
+.empty-val {
+  color: var(--text-dim);
+}
+
+.pass-text {
+  color: var(--color-pass);
+  font-weight: bold;
+}
+
+.mini-table {
+  max-width: 600px;
+  margin-top: 14px;
+}
+
+/* -------------------------------------------------------------------
+   13. ARCHITECTURE & TECH BOXES
+   ------------------------------------------------------------------- */
+.arch-container {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 24px;
+}
+
+.arch-box, .tech-box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.dir-structure {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  background-color: var(--bg-secondary);
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-item {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.tech-item strong {
+  color: var(--accent);
+}
+
+/* -------------------------------------------------------------------
+   14. LIMITATIONS & FUTURE SCOPE
+   ------------------------------------------------------------------- */
+.split-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+/* -------------------------------------------------------------------
+   15. DELIVERABLES LINKS
+   ------------------------------------------------------------------- */
+.links-container {
+  text-align: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* -------------------------------------------------------------------
+   16. FOOTER
+   ------------------------------------------------------------------- */
+.footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-light);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.footer p {
+  margin-bottom: 4px;
+}
+
+.footer-sub {
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+/* -------------------------------------------------------------------
+   17. MOBILE STYLES
+   ------------------------------------------------------------------- */
+@media (max-width: 868px) {
+  .overview-grid,
+  .code-grid,
+  .logic-columns,
+  .severity-cards,
+  .arch-container,
+  .split-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
